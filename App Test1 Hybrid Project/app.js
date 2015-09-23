@@ -38,6 +38,8 @@
                 }
             }
 
+            feedback.initialize('0c1c1570-61ff-11e5-a363-fb3df9004ff9');
+            
             bootstrap();
         }, false);
     } else {

@@ -59,9 +59,18 @@ app.accountsView = kendo.observable({
             },
         },
         dataSource = new kendo.data.DataSource(dataSourceOptions),
+        accountShow = function(){
+            $("#account-list").kendoMobileListView({
+                    template: $("#accountsViewModelTemplate").html(),
+                    style: 'inset',
+                    click: accountsViewModel.itemClick,
+                    dataSource: accountsViewModel.dataSource
+                });
+        },
         accountsViewModel = kendo.observable({
-            dataSource: dataSource
+            dataSource: dataSource,
+            accountShow:accountShow
         });
 
-    parent.set('accountsViewModel', accoaccountsViewModel
+    parent.set('accountsViewModel', accountsViewModel);
 })(app.accountListView1);
