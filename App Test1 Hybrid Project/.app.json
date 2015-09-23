@@ -52,23 +52,11 @@
     },
     {
       "type": "view",
-      "components": [
-        {
-          "type": "list",
-          "name": "accountsViewModel",
-          "dataProvider": "appTest1Backend",
-          "collection": "dbo_Accounts",
-          "headerField": "Type",
-          "subHeaderField": "Notes",
-          "masterDetails": false,
-          "pullToRefresh": true,
-          "endlessScroll": false
-        }
-      ],
+      "components": [],
       "name": "accountsView",
-      "title": "Account list",
+      "title": "Accounts",
       "addToNavigation": true,
-      "icon": "organize"
+      "icon": "home"
     }
   ],
   "dataProviders": [

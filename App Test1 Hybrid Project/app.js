@@ -38,12 +38,6 @@
                 }
             }
 
-            // hide the splash screen as soon as the app is ready. otherwise
-            // Cordova will wait 5 very long seconds to do it for you.
-            if (navigator && navigator.splashscreen) {
-                navigator.splashscreen.hide();
-            }
-            
             bootstrap();
         }, false);
     } else {
