@@ -1,0 +1,14 @@
+<div data-role="view" data-title="Account list" data-layout="main" data-model="app.accountsView" data-show="app.accountsView.onShow" data-after-show="app.accountsView.afterShow">
+    <!-- START_CUSTOM_CODE_accountsView -->
+    <!-- END_CUSTOM_CODE_accountsView -->
+    <ul data-role="listview" data-style="inset" data-template="accountsViewModelTemplate" data-bind="{ source: accountsViewModel.dataSource}" data-pull-to-refresh="true" data-endless-scroll="false">
+    </ul>
+    <!-- START_CUSTOM_CODE_accountsViewModel -->
+    <!-- END_CUSTOM_CODE_accountsViewModel -->
+    <script type="text/x-kendo-template" id="accountsViewModelTemplate">
+        <div class="image-with-text">
+            <h3>#: data['Type'] #</h3>
+            <p>#: data['Notes'] #</p>
+        </div>
+    </script>
+</div>

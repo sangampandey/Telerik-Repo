@@ -3,9 +3,27 @@
   "views": [
     {
       "type": "view",
-      "components": [],
+      "components": [
+        {
+          "type": "authentication",
+          "name": "homeModel",
+          "dataProvider": "appTest1Backend",
+          "emailLabel": "Email",
+          "passwordLabel": "Password",
+          "signinLabel": "Sign In",
+          "signinRedirect": "dataListView",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Register",
+          "registerEmailLabel": "Email",
+          "registerPasswordLabel": "Password",
+          "registerNameLabel": "Name",
+          "registerLabel": "Register",
+          "registerRedirect": "home",
+          "gotoSigninLabel": "Sign In"
+        }
+      ],
       "name": "home",
-      "title": "Home",
+      "title": "Login",
       "addToNavigation": true,
       "icon": "home"
     },
@@ -16,19 +34,39 @@
           "type": "list",
           "name": "dataListViewModel",
           "dataProvider": "appTest1Backend",
-          "collection": "dbo_Bills",
-          "iconField": false,
-          "headerField": "Title",
-          "subHeaderField": "Amount",
-          "filterField": "Title",
-          "group": "Title",
-          "masterDetails": false,
+          "collection": "dbo_Accounts",
+          "headerField": "Id",
+          "subHeaderField": "Id",
+          "masterDetails": true,
+          "detailHeaderField": "Id",
+          "detailSubHeaderField": "Id",
+          "detailDescriptionField": "Id",
           "pullToRefresh": true,
           "endlessScroll": false
         }
       ],
       "name": "dataListView",
-      "title": "Bill List",
+      "title": "Data List",
+      "addToNavigation": true,
+      "icon": "organize"
+    },
+    {
+      "type": "view",
+      "components": [
+        {
+          "type": "list",
+          "name": "accountsViewModel",
+          "dataProvider": "appTest1Backend",
+          "collection": "dbo_Accounts",
+          "headerField": "Type",
+          "subHeaderField": "Notes",
+          "masterDetails": false,
+          "pullToRefresh": true,
+          "endlessScroll": false
+        }
+      ],
+      "name": "accountsView",
+      "title": "Account list",
       "addToNavigation": true,
       "icon": "organize"
     }

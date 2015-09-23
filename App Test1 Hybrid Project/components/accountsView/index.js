@@ -1,12 +1,12 @@
 'use strict';
 
-app.dataListView = kendo.observable({
+app.accountsView = kendo.observable({
     onShow: function() {},
     afterShow: function() {}
 });
 
-// START_CUSTOM_CODE_dataListView
-// END_CUSTOM_CODE_dataListView
+// START_CUSTOM_CODE_accountsView
+// END_CUSTOM_CODE_accountsView
 (function(parent) {
     var dataProvider = app.data.appTest1Backend,
         flattenLocationProperties = function(dataItem) {
@@ -46,8 +46,12 @@ app.dataListView = kendo.observable({
             schema: {
                 model: {
                     fields: {
-                        'Id': {
-                            field: 'Id',
+                        'Type': {
+                            field: 'Type',
+                            defaultValue: ''
+                        },
+                        'Notes': {
+                            field: 'Notes',
                             defaultValue: ''
                         },
                     }
@@ -55,25 +59,12 @@ app.dataListView = kendo.observable({
             },
         },
         dataSource = new kendo.data.DataSource(dataSourceOptions),
-        dataListViewModel = kendo.observable({
-            dataSource: dataSource,
-            itemClick: function(e) {
-                app.mobileApp.navigate('#components/dataListView/details.html?uid=' + e.dataItem.uid);
-            },
-            detailsShow: function(e) {
-                var item = e.view.params.uid,
-                    dataSource = dataListViewModel.get('dataSource'),
-                    itemModel = dataSource.getByUid(item);
-                if (!itemModel.Id) {
-                    itemModel.Id = String.fromCharCode(160);
-                }
-                dataListViewModel.set('currentItem', itemModel);
-            },
-            currentItem: null
+        accountsViewModel = kendo.observable({
+            dataSource: dataSource
         });
 
-    parent.set('dataListViewModel', dataListViewModel);
-})(app.dataListView);
+    parent.set('accountsViewModel', accountsViewModel);
+})(app.accountsView);
 
-// START_CUSTOM_CODE_dataListViewModel
-// END_CUSTOM_CODE_dataListViewModel
+// START_CUSTOM_CODE_accountsViewModel
+// END_CUSTOM_CODE_accountsViewModel
