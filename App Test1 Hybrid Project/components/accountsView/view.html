@@ -1,4 +1,15 @@
-<div data-role="view" data-title="Accounts" data-layout="main" data-model="app.accountsView" data-show="app.accountsView.onShow" data-after-show="app.accountsView.afterShow">
+<div data-role="view" data-title="Accounts" data-layout="main" data-model="app.accountsView" data-show="app.accountsView.onShow" data-after-show="app.accountsView.afterShow" data-bind="events: { beforeShow: accountsViewModel.accountShow }"
+>
     <!-- START_CUSTOM_CODE_accountsView -->
+    <ul id="account-list">
+        
+   </ul>
+    
+    <script type="text/x-kendo-template" id="accountsViewModelTemplate">
+        <div class="image-with-text">
+            <h3>#: data['Type'] #</h3>
+            <p>#: data['Notes'] #</p>
+        </div>`
+   </script>
     <!-- END_CUSTOM_CODE_accountsView -->
 </div>

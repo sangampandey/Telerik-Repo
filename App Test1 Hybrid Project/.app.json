@@ -57,6 +57,26 @@
       "title": "Accounts",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "view",
+      "components": [
+        {
+          "type": "list",
+          "name": "accountListView1Model",
+          "dataProvider": "appTest1Backend",
+          "collection": "dbo_Accounts",
+          "headerField": "Type",
+          "subHeaderField": "Notes",
+          "masterDetails": false,
+          "pullToRefresh": true,
+          "endlessScroll": false
+        }
+      ],
+      "name": "accountListView1",
+      "title": "Account List",
+      "addToNavigation": true,
+      "icon": "organize"
     }
   ],
   "dataProviders": [
